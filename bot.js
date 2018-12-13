@@ -8,7 +8,7 @@ client.on("message", (message) => {
     /// DREAM
 
 
-   if (message.content.startsWith("$new")) { /// DREAM
+   if (message.content.startsWith("-new")) { /// DREAM
 
 
         const reason = message.content.split(" ").slice(1).join(" "); /// DREAM
@@ -99,7 +99,7 @@ client.on("message", (message) => {
 
 
 
-  if (message.content.startsWith("Fclose")) {
+  if (message.content.startsWith("-close")) {
 
 
         if (!message.channel.name.startsWith(`ticket-`)) return message.channel.send(`You can't use the close command outside of a ticket channel.`);
@@ -107,19 +107,19 @@ client.on("message", (message) => {
 
 
 
-       message.channel.send(`هل انت متأكد من اقفالك للتذكرة اذا متأكد اكتب $confirm`)
+       message.channel.send(`هل انت متأكد من اقفالك للتذكرة اذا متأكد اكتب -confirm`)
 
 
            .then((m) => {
 
 
-               message.channel.awaitMessages(response => response.content === '$confirm', {
+               message.channel.awaitMessages(response => response.content === '-confirm', {
 
 
                        max: 1,
 
 
-                       time: 20000,
+                       time: 2000000,
 
 
                        errors: ['time'],
